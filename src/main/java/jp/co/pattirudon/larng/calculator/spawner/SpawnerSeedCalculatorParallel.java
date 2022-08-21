@@ -84,7 +84,7 @@ public class SpawnerSeedCalculatorParallel implements SpawnerSeedCalculator {
                 long random = randoms.get(i);
                 String[] seeds = seeds(random).stream().map(n -> String.format("%016x", n)).sorted()
                         .toArray(String[]::new);
-                logger.info(String.format("%016x: %s", random, Arrays.toString(seeds)));
+                logger.fine(String.format("%016x: %s", random, Arrays.toString(seeds)));
                 for (int j = 0; j < seeds.length; j++) {
                     String seed = seeds[j];
                     jsonGenerator.writeString(seed);
@@ -96,12 +96,6 @@ public class SpawnerSeedCalculatorParallel implements SpawnerSeedCalculator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void solve(long random, Logger logger, Path resultFile) {
-        String[] seeds = seeds(random).stream().map(n -> String.format("%016x", n)).sorted()
-                .toArray(String[]::new);
-        logger.info(String.format("%016x: %s", random, Arrays.toString(seeds)));
     }
 
     @Override
