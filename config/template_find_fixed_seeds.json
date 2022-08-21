@@ -1,0 +1,26 @@
+{
+    "numShinyRolls": 5,
+    "ivs": {
+        "h": 11,
+        "a": 4,
+        "b": 4,
+        "c": 17,
+        "d": 1,
+        "s": 13
+    },
+    "ability": {
+        "outwardAbility": 2,
+        "numAbilities": 2
+    },
+    "nature": "Careful",
+    "gender": {
+        "outwardGender": "Male",
+        "genderRatio": "Even"
+    },
+    "bodyMeasurements": [
+        {
+            "height": 93,
+            "weight": 21
+        }
+    ]
+}
