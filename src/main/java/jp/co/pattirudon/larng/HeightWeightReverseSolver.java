@@ -10,7 +10,9 @@ public class HeightWeightReverseSolver {
             float mediWeight) {
         TreeMap<Integer, TreeSet<Integer>> result = new TreeMap<>();
         for (Integer heightScalar : solveForHeight(height, mediHeight)) {
-            result.put(heightScalar, solveForWeight(heightScalar, weight, mediWeight));
+            TreeSet<Integer> weightSet = solveForWeight(heightScalar, weight, mediWeight);
+            if (weightSet.size() > 0)
+                result.put(heightScalar, weightSet);
         }
         return result;
     }
