@@ -54,8 +54,8 @@ public class Sampler {
      * <pre>
      * | rand | single ability | double abilities |
      * | ---- | -------------- | ---------------- |
-     * | 0    | 1              | 2                |
-     * | 1    | 1              | 1                |
+     * | 0    | 1              | 1                |
+     * | 1    | 1              | 2                |
      * </pre>
      * 
      * @param random
@@ -71,7 +71,7 @@ public class Sampler {
         int tid = random.nextInt();
         int pid = getPid(random, tid, numShinyRolls);
         int[] ivs = getIVs(random, numGuaranteedIVs);
-        int ability = 2 - (random.nextInt(2) | (2 - numAbilities));
+        int ability = 1 + (random.nextInt(2) & (numAbilities - 1));
         Gender.Internal gender;
         if (genderRatio == Gender.Ratio.Female || genderRatio == Gender.Ratio.Male
                 || genderRatio == Gender.Ratio.Genderless)
