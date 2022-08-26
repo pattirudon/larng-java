@@ -43,7 +43,6 @@ public class TabbedTopFrame extends JFrame implements ActionListener {
     JTextField textFieldSeed = new JTextField(18);
     JTextField textFieldShinyRolls = new JTextField(10);
     JTextField textFieldPaths = new JTextField(18);
-//    JComboBox<Gender.Ratio> textFieldGenderRatio = new JComboBox<>(Gender.Ratio.values());
     JScrollPane rightScroll = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
             JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     DefaultTableModel model = new DefaultTableModel(COLUMNS, 0);
@@ -63,7 +62,7 @@ public class TabbedTopFrame extends JFrame implements ActionListener {
         getContentPane().setLayout(new BorderLayout());
 
         getContentPane().add(tabPane);
-        tabPane.add(splitPane, "Pokemon View");
+        tabPane.add(splitPane, "Path View");
         splitPane.setLeftComponent(leftScroll);
         {
             leftScroll.setViewportView(topForm);
