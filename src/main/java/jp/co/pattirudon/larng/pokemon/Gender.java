@@ -43,9 +43,14 @@ public enum Gender {
         }
 
         public static Internal of(Ratio ratio) {
-            if (!(ratio == Ratio.Female || ratio == Ratio.Male || ratio == Ratio.Genderless))
+            if (ratio == Ratio.Female)
+                return new Internal(Female, ratio, OptionalInt.empty());
+            else if (ratio == Ratio.Male)
+                return new Internal(Male, ratio, OptionalInt.empty());
+            else if (ratio == Ratio.Genderless)
+                return new Internal(Unknown, ratio, OptionalInt.empty());
+            else
                 throw new IllegalArgumentException("given gender type requires gender value");
-            return new Internal(Unknown, ratio, OptionalInt.empty());
         }
 
         @Override
